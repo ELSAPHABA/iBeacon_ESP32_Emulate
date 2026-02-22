@@ -118,3 +118,5 @@ extern "C" void app_main(void)
 
     ESP_LOGI(TAG, "iBeacon emulator configured.");
 }
+
+//TODO: RAW Advertisment 데이터 완전 비교, Tx power Level 추가
