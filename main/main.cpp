@@ -27,8 +27,9 @@ static uint8_t adv_raw[] = {
   0xC5                                 // Tx Power at 1m = -59 dBm
 };
 
-// Scan Response (0xFFF1 UUID list + Service Data + Complete Local Name) = 28 bytes
+// Scan Response (Tx Power + 0xFFF1 UUID list + Service Data + Complete Local Name) = 31 bytes
 static uint8_t scan_rsp_raw[] = {
+  0x02, 0x0A, 0x00,                    // Tx Power Level: 0dBm
   0x03, 0x03, 0xF1, 0xFF,              // Complete List of 16-bit UUIDs: 0xFFF1
   0x0E, 0x16, 0xF1, 0xFF,              // Service Data (UUID=0xFFF1)
   0x64, 0x9C, 0x4B, 0xE0, 0xFD, 0xC3, 0x00, 0x00, 0x1C, 0x5F, 0xDF, // payload(11)
@@ -118,5 +119,3 @@ extern "C" void app_main(void)
 
     ESP_LOGI(TAG, "iBeacon emulator configured.");
 }
-
-//TODO: RAW Advertisment 데이터 완전 비교, Tx power Level 추가
