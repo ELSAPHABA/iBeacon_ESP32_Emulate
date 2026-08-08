@@ -117,5 +117,4 @@ extern "C" void app_main(void)
     ESP_ERROR_CHECK(esp_ble_gap_config_adv_data_raw(adv_raw, sizeof(adv_raw)));
     ESP_ERROR_CHECK(esp_ble_gap_config_scan_rsp_data_raw(scan_rsp_raw, sizeof(scan_rsp_raw)));
 
-    ESP_LOGI(TAG, "iBeacon emulator configured.");
 }
