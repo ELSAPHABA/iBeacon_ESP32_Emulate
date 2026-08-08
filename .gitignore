@@ -1,0 +1,40 @@
+# ESP-IDF Standard ignore list
+
+# 1. 빌드 결과물 (가장 중요)
+build/
+sdkconfig.old
+
+# 2. 임시 설정 및 로컬 환경 파일
+# sdkconfig는 프로젝트의 핵심 설정이지만, 특정 PC의 절대 경로가 포함될 수 있어 
+# 협업 시에는 제외하고 'sdkconfig.defaults'를 공유하는 것이 권장됩니다.
+# 하지만 개인 프로젝트라면 포함시키는 경우도 있습니다. 
+sdkconfig
+*.swp
+*.bak
+
+# 3. 파이썬 가상환경 및 캐시
+.espressif/
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# 4. 에디터 및 IDE 설정
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+.idea/
+*.iml
+.eclipse/
+.settings/
+
+# 5. 기타 임시 파일
+node_modules/
+.DS_Store
+Thumbs.db
+
+# 6. 유닛 테스트 결과
+test_results/
